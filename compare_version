@@ -1,0 +1,33 @@
+  //new version need to be compared
+$newVersion = '1.13.3';
+  //Current installed version
+$currentVersion = '1.13.0.1';
+
+
+    $sa1 = explode(".",$newVersion);
+    $cur = explode(".",$currentVersion);
+	  $result='Current Version is same version with the new uploaded apk';
+	  
+    	for($x=0;3>$x;$x++) {  
+    		if(!isset($sa1[$x])){
+    			$sa1[$x]=0;
+    		}
+    		if(!isset($cur[$x])){
+    			$cur[$x]=0;
+    		}
+    		if($sa1[$x]<$cur[$x]){
+    			$result='Latest version';
+    			echo 'Current version is '.$result;
+    			break;
+    		}elseif($sa1[$x]>$cur[$x]){
+    			$result='Old version';
+    			echo 'Current version is '.$result;
+    			break;
+    		}
+    		
+    		if($x==2){
+    			echo $result;
+    		}
+    		
+    	}
+  
